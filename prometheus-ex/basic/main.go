@@ -99,7 +99,6 @@ func Count(w *hResponseWriter, r *http.Request) {
 	log.Println("count is accessed")
 	if get%200 == 0 {
 		w.WriteHeader(http.StatusInternalServerError)
-		w.code = 500
 		io.WriteString(w, "server error")
 	} else {
 		w.code = 200
